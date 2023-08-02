@@ -1,48 +1,66 @@
-variable "resource_group_name" {
-  description = "The local resource group name for the peerings"
+variable "first_resource_group_name" {
+  description = "(Required) The name of the first resource group."
   type        = string
 }
 
-variable "remote_resource_group_name" {
-  description = "The remote resource group name for the peerings"
+variable "second_resource_group_name" {
+  description = "(Required) The name of the second resource group."
   type        = string
 }
 
-variable "vnet_name" {
-  description = "The name of the local vnet with the gateway"
+variable "first_vnet_name" {
+  description = "(Required) The name of the first virtual network."
   type        = string
 }
 
-variable "remote_vnet_name" {
-  description = "The name of the remote vnet"
+variable "second_vnet_name" {
+  description = "(Required) The name of the second virtual network."
   type        = string
 }
 
-variable "vnet_id" {
-  description = "The id of the local vnet with the gateway"
+variable "first_vnet_id" {
+  description = "(Required) The id of the first virtual network."
   type        = string
 }
 
-variable "remote_vnet_id" {
-  description = "The id of the remote vnet"
+variable "second_vnet_id" {
+  description = "(Required) The id of the second virtual network."
   type        = string
 }
 
-variable "local_forwarded_traffic" {
-  description = "(Optional) Allow forwarded traffic to the local virtual network."
+variable "first_forwarded_traffic" {
+  description = "(Optional) Allow forwarded traffic to the first virtual network."
   type        = bool
   default     = false
 }
 
-variable "remote_forwarded_traffic" {
-  description = "(Optional) Allow forwarded traffic to the remote virtual network."
+variable "second_forwarded_traffic" {
+  description = "(Optional) Allow forwarded traffic to the second virtual network."
   type        = bool
   default     = false
 }
 
 
-variable "use_local_gateway" {
-  description = "(Optional) Use the local virtual network gateway for the peering."
+variable "first_gateway_transit" {
+  description = "(Optional) Allow gateway transit on the first virtual network."
+  type        = bool
+  default     = false
+}
+
+variable "second_gateway_transit" {
+  description = "(Optional) Allow gateway transit on the second virtual network."
+  type        = bool
+  default     = false
+}
+
+variable "first_remote_gateway" {
+  description = "(Optional) Allow remote gateway on the first virtual network."
+  type        = bool
+  default     = false
+}
+
+variable "second_remote_gateway" {
+  description = "(Optional) Allow remote gateway on the second virtual network."
   type        = bool
   default     = false
 }
